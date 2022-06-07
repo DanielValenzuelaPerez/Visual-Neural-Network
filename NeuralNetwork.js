@@ -24,15 +24,19 @@ class NeuralNetwork{
         this.biasOutput.randomize();
 
         this.learningRate = 0.1;
-        this.iterations = 100000;
+        this.iterations = 10;
         this.iteration = 0;
         this.error = 0;
 
         this.showProgress = false;
+
+        this.inputRecord = [];
+        this.hiddenRecord = [];
+        this.outputRecord = [];
     }
 
     train(){
-        while(this.iteration <= this.iterations){
+        while(this.iteration < this.iterations){
             const r = floor(random(this.inputData.length));
             this.inputs = Matrix.arrayToMatrix(this.inputData[r]);
             this.targets = Matrix.arrayToMatrix(this.targetData[r]);
@@ -42,6 +46,7 @@ class NeuralNetwork{
             this.backPropagation();
 
             this.printProgress();
+            this.saveRecords();
 
             this.iteration++;
         }
@@ -116,5 +121,10 @@ class NeuralNetwork{
 
     printProgress(){
         print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
+    }
+    saveRecords(){
+        this.inputRecord.push(this.inputs);
+        this.hiddenRecord.push(this.hiddens);
+        this.outputRecord.push(this.outputs);
     }
 }
