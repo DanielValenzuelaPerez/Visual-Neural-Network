@@ -24,7 +24,7 @@ class NeuralNetwork{
         this.biasOutput.randomize();
 
         this.learningRate = 0.1;
-        this.iterations = 10;
+        this.iterations = 100000;
         this.iteration = 0;
         this.error = 0;
 
@@ -33,7 +33,7 @@ class NeuralNetwork{
 
     train(){
         while(this.iteration <= this.iterations){
-            const r = round(random(this.inputData.length - 1));
+            const r = floor(random(this.inputData.length));
             this.inputs = Matrix.arrayToMatrix(this.inputData[r]);
             this.targets = Matrix.arrayToMatrix(this.targetData[r]);
             
@@ -53,7 +53,7 @@ class NeuralNetwork{
         this.hiddens.add(this.biasHidden);
         this.hiddens = this.toSigmoid(this.hiddens);
         
-        // Generating the outputs' output Sig([W]*[I] + [B])
+        // Generating the outputs' output Sig([W]*[H] + [B])
         this.outputs = Matrix.multiply(this.weightsHiddenToOutput, this.hiddens);
         this.outputs.add(this.biasOutput);
         this.outputs = this.toSigmoid(this.outputs);
@@ -66,6 +66,7 @@ class NeuralNetwork{
     }
     
     calculateTheError(){
+        this.error = 0;
         for(let i = 0; i < this.targets.rows; i++)
             this.error += Math.pow(this.outputs.data[i][0] - this.targets.data[i][0], 2) // (O - T)^2
     }
@@ -96,7 +97,7 @@ class NeuralNetwork{
                     gradients.data[j][i] += this.weightsHiddenToOutput.data[k][j] * this.outputs.data[k][0] * (1 - this.outputs.data[k][0]) * 2 * (this.outputs.data[k][0] - this.targets.data[k][0]);
                 }
                 let dz_d = isForBias ? 1 : this.inputs.data[i][0];
-                gradients.data[j][i] *= this.hiddens.data[j][0] * (1 - this.hiddens.data[j][0] * dz_d);
+                gradients.data[j][i] *= this.hiddens.data[j][0] * (1 - this.hiddens.data[j][0]) * dz_d;
             }
         return gradients;
     }
