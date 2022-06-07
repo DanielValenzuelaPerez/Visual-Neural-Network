@@ -115,6 +115,6 @@ class NeuralNetwork{
     }
 
     printProgress(){
-        print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0]}, (${this.error})`);
+        print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
     }
 }
