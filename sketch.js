@@ -4,11 +4,7 @@ let _hiddenNodes = 4;
 let NN;
 
 function setup() {
-  createCanvas(200, 200);
+  noCanvas();
   NN = new NeuralNetwork(_inputData, _hiddenNodes, _targetData);
   NN.train();
-}
-
-function draw() {
-  background(220);
 }
