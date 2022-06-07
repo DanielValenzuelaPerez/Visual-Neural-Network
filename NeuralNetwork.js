@@ -24,7 +24,7 @@ class NeuralNetwork{
         this.biasOutput.randomize();
 
         this.learningRate = 0.1;
-        this.iterations = 5000;
+        this.iterations = 10;
         this.iteration = 0;
         this.error = 0;
 
@@ -33,7 +33,7 @@ class NeuralNetwork{
 
     train(){
         while(this.iteration <= this.iterations){
-            const r = round(random(this.inputData.length));
+            const r = round(random(this.inputData.length - 1));
             this.inputs = Matrix.arrayToMatrix(this.inputData[r]);
             this.targets = Matrix.arrayToMatrix(this.targetData[r]);
             
@@ -114,7 +114,6 @@ class NeuralNetwork{
     }
 
     printProgress(){
-        print(this.inputs);
-        print(this.outputs);
+        print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0]}, (${this.error})`);
     }
 }
