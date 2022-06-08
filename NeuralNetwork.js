@@ -32,8 +32,10 @@ class NeuralNetwork{
 
         this.inputRecord = [];
         this.weightsInputToHiddenRecords = [];
+        this.biasHiddenRecords = [];
         this.hiddenRecord = [];
         this.weightsHiddenToOutputRecords = [];
+        this.biasOutputRecords = [];
         this.outputRecord = [];
     }
 
@@ -131,8 +133,10 @@ class NeuralNetwork{
         if(this.iteration % (this.iterations / 200) === 0){ // Saves only 200 records
             this.inputRecord.push(this.inputs);
             this.weightsInputToHiddenRecords.push(JSON.parse(JSON.stringify(this.weightsInputToHidden))); // Make a deep push (https://youtu.be/EeZBKv34mm4)
+            this.biasHiddenRecords.push(JSON.parse(JSON.stringify(this.biasHidden)));
             this.hiddenRecord.push(this.hiddens);
             this.weightsHiddenToOutputRecords.push(JSON.parse(JSON.stringify(this.weightsHiddenToOutput)));
+            this.biasOutputRecords.push(JSON.parse(JSON.stringify(this.biasOutput)));
             this.outputRecord.push(this.outputs);
         }
     }
