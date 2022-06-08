@@ -9,11 +9,21 @@ class Synapse{
         stroke(255);
         strokeWeight(2);
         line(this.x1, this.y1, this.x2, this.y2);
+
+        let textX = this.x1 + (this.x2 - this.x1)/4;
+        let textY = this.y1 + (this.y2 - this.y1)/4;
         
+        // Text holder (box)
+        fill(0);
+        stroke(255);
+        rectMode(CENTER);
+        rect(textX, textY, 50, 20, 5);
+
+        //Text
         fill(255);
         textSize(16);
         noStroke();
         textAlign(CENTER, CENTER);
-        text(val.toFixed(2), this.x1 + (this.x2 - this.x1)/2, this.y1 + (this.y2 - this.y1)/2);
+        text(val.toFixed(2), textX, textY);
     }
 }

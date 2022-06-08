@@ -17,7 +17,6 @@ class Weights{
                 this.synapses.push(s);
             }
         }
-        print(this.matrix);
     }
     show(record){
         let val = []

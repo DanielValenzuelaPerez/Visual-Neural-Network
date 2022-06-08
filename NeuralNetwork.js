@@ -122,13 +122,13 @@ class NeuralNetwork{
     }
 
     printProgress(){
-        if(this.iteration % (this.iterations / 100) === 0){ // Shows only 100 records
+        if(this.iteration % (this.iterations / 200) === 0 && this.showProgress){ // Shows only 200 records
             print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
             print(`${this.weightsInputToHidden.data[0][0]}`);
         }
     }
     saveRecords(){
-        if(this.iteration % (this.iterations / 100) === 0){ // Saves only 100 records
+        if(this.iteration % (this.iterations / 200) === 0){ // Saves only 200 records
             this.inputRecord.push(this.inputs);
             this.weightsInputToHiddenRecords.push(JSON.parse(JSON.stringify(this.weightsInputToHidden))); // Make a deep push (https://youtu.be/EeZBKv34mm4)
             this.hiddenRecord.push(this.hiddens);

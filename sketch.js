@@ -27,22 +27,15 @@ function setup() {
 }
 function draw(){
   background(0);
+  inputToHiddenWeights.show(slider.value);
+  hiddenToOutputWeights.show(slider.value);
+
   inputLayer.show(slider.value);
   hiddenLayer.show(slider.value);
   outputLayer.show(slider.value);
-  inputToHiddenWeights.show(slider.value);
-  hiddenToOutputWeights.show(slider.value);
-  /*
-  let x1 = windowWidth * 0.2;
-  let x2 = windowWidth * 0.5;
-  let matrixCols = 2;
-  let matrixRows = 4;
-  let neuronIndex = 0;
-  let y1 = (windowHeight / matrixCols) * neuronIndex + ((windowHeight / matrixCols) * 0.5);
-  let y2 = (windowHeight / matrixRows) * neuronIndex + ((windowHeight / matrixRows) * 0.5);
-  line(x1,y1,x2,y2);*/
 }
 /*
-+ Move weight
-+ Show the weight connections with numbers
++ Fix overlaping of weights
++ Add rectangle around weights
++ Add 100 more records
  */
