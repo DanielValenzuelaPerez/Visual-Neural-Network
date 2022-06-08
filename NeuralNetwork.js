@@ -24,7 +24,7 @@ class NeuralNetwork{
         this.biasOutput.randomize();
 
         this.learningRate = 0.1;
-        this.iterations = 100;
+        this.iterations = 20000;
         this.iteration = 0;
         this.error = 0;
 
@@ -123,8 +123,10 @@ class NeuralNetwork{
         print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
     }
     saveRecords(){
-        this.inputRecord.push(this.inputs);
-        this.hiddenRecord.push(this.hiddens);
-        this.outputRecord.push(this.outputs);
+        if(this.iteration % (this.iterations / 100) === 0){ // Saves only 100 records
+            this.inputRecord.push(this.inputs);
+            this.hiddenRecord.push(this.hiddens);
+            this.outputRecord.push(this.outputs);
+        }
     }
 }

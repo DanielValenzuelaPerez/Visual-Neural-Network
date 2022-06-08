@@ -30,7 +30,5 @@ function draw(){
   outputLayer.show(slider.value);
 }
 /*
-- Record 100 iterations
-- Add slider (html) 0 - 99 (100 records)
-- Show records depending on slider
++ Return iterations to a high number and save only 100 records
  */
