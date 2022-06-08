@@ -5,7 +5,7 @@ class Layer{
         this.neurons = [];
         this.neuronsInLayer = matrixRecords[0].rows;
         for(let i = 0; i < this.neuronsInLayer; i++){
-            let n = new Neuron(width, height, layer, i, this.neuronsInLayer);
+            let n = new Neuron(windowWidth, windowHeight, layer, i, this.neuronsInLayer);
             this.neurons.push(n);
         }
     }

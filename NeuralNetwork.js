@@ -31,6 +31,7 @@ class NeuralNetwork{
         this.showProgress = false;
 
         this.inputRecord = [];
+        this.weightsInputToHiddenRecords = [];
         this.hiddenRecord = [];
         this.outputRecord = [];
     }
@@ -120,11 +121,14 @@ class NeuralNetwork{
     }
 
     printProgress(){
-        print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
+        if(this.iteration % (this.iterations / 100) === 0){ // Shows only 100 records
+            print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
+        }
     }
     saveRecords(){
         if(this.iteration % (this.iterations / 100) === 0){ // Saves only 100 records
             this.inputRecord.push(this.inputs);
+            this.weightsInputToHiddenRecords.push(this.weightsInputToHidden);
             this.hiddenRecord.push(this.hiddens);
             this.outputRecord.push(this.outputs);
         }
