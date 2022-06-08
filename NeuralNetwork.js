@@ -33,6 +33,7 @@ class NeuralNetwork{
         this.inputRecord = [];
         this.weightsInputToHiddenRecords = [];
         this.hiddenRecord = [];
+        this.weightsHiddenToOutputRecords = [];
         this.outputRecord = [];
     }
 
@@ -123,13 +124,15 @@ class NeuralNetwork{
     printProgress(){
         if(this.iteration % (this.iterations / 100) === 0){ // Shows only 100 records
             print(`[${this.inputs.data[0][0]}, ${this.inputs.data[1][0]}] = ${this.outputs.data[0][0].toFixed(2)}, (${this.error.toFixed(4)})`);
+            print(`${this.weightsInputToHidden.data[0][0]}`);
         }
     }
     saveRecords(){
         if(this.iteration % (this.iterations / 100) === 0){ // Saves only 100 records
             this.inputRecord.push(this.inputs);
-            this.weightsInputToHiddenRecords.push(this.weightsInputToHidden);
+            this.weightsInputToHiddenRecords.push(JSON.parse(JSON.stringify(this.weightsInputToHidden))); // Make a deep push (https://youtu.be/EeZBKv34mm4)
             this.hiddenRecord.push(this.hiddens);
+            this.weightsHiddenToOutputRecords.push(JSON.parse(JSON.stringify(this.weightsHiddenToOutput)));
             this.outputRecord.push(this.outputs);
         }
     }
