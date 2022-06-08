@@ -9,8 +9,7 @@ class Layer{
             this.neurons.push(n);
         }
     }
-    show(){
-        let record = 2; // pass in the record to show ^^
+    show(record){
         for(let i = 0; i < this.neurons.length; i++)
             this.neurons[i].show(this.matrixRecords[record].data[i][0].toFixed(2));
     }

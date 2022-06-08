@@ -24,7 +24,7 @@ class NeuralNetwork{
         this.biasOutput.randomize();
 
         this.learningRate = 0.1;
-        this.iterations = 10;
+        this.iterations = 100;
         this.iteration = 0;
         this.error = 0;
 

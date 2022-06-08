@@ -10,20 +10,27 @@ let inputLayer;
 let hiddenLayer;
 let outputLayer;
 
+let slider;
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight - 31);
   NN = new NeuralNetwork(_inputData, _hiddenNodes, _targetData);
   NN.train();
-
-  print(NN.inputRecord[0]);
 
   inputLayer = new Layer(0, NN.inputRecord);
   hiddenLayer = new Layer(1, NN.hiddenRecord);
   outputLayer = new Layer(2, NN.outputRecord);
+
+  slider = document.getElementById("myRange");
 }
 function draw(){
   background(0);
-  inputLayer.show();
-  hiddenLayer.show();
-  outputLayer.show();
+  inputLayer.show(slider.value);
+  hiddenLayer.show(slider.value);
+  outputLayer.show(slider.value);
 }
+/*
+- Record 100 iterations
+- Add slider (html) 0 - 99 (100 records)
+- Show records depending on slider
+ */
