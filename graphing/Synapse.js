@@ -5,9 +5,10 @@ class Synapse{
         this.x2 = x2;
         this.y2 = y2;
     }
-    show(val){
-        stroke(255);
-        strokeWeight(2);
+    show(val, isFeedForward){
+        stroke(255, 0, 0);
+        if(isFeedForward) stroke(0,255,0)
+        strokeWeight(Math.abs(val)+0,5);
         line(this.x1, this.y1, this.x2, this.y2);
 
         let textX = this.x1 + (this.x2 - this.x1)/4;
@@ -16,6 +17,7 @@ class Synapse{
         // Text holder (box)
         fill(0);
         stroke(255);
+        strokeWeight(2);
         rectMode(CENTER);
         rect(textX, textY, 50, 20, 5);
 

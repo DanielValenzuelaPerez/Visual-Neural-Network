@@ -20,13 +20,15 @@ class Weights{
     }
     show(record){
         let val = []
+        let isFeedForward = record % 2 == 0 ? true : false; // Is it a feedforward or back propagation record?
+
         for(let i = 0; i < this.matrix[record].cols; i++){
             for(let j = 0; j < this.matrix[record].rows; j++){
                 val.push(this.matrix[record].data[j][i]);
             }
         }
         for(let i = 0; i < this.synapses.length; i++){
-            this.synapses[i].show(val[i]);
+            this.synapses[i].show(val[i], isFeedForward);
         }
     }
 }

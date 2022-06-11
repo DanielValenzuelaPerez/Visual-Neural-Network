@@ -3,5 +3,5 @@
     "*.js",
     "libraries/*.js",
     "c:\\Users\\MabYn\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.8\\p5types\\global.d.ts"
-  ]
+, "graphing/Bias.js", "classes/Matrix.js"  ]
 }
