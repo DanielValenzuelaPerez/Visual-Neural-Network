@@ -15,7 +15,8 @@ let outputLayer;
 let slider;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight - 31);
+  let canvas = createCanvas(windowWidth, windowHeight - 31); //windowWidth, windowHeight - 31
+  canvas.parent('canvascontainer');
   NN = new NeuralNetwork(_inputData, _hiddenNodes, _targetData);
   NN.train();
 
@@ -31,10 +32,16 @@ function setup() {
   outputLayer = new Layer(2, NN.outputRecord);
 
   slider = document.getElementById("myRange");
-  setInterval(function(){slider.value++}, 500) // 1 sec intervals
+  setInterval(function(){slider.value++}, 500) // 0.5 sec intervals
 }
 function draw(){
   background(0);
+  textSize(20);
+  textAlign(LEFT);
+  text("Artificial Neural Network", 50, 50);
+  textSize(16);
+  textAlign(RIGHT);
+  text("Made by Daniel Valenzuela", windowWidth - 50, windowHeight - 60);
 
   inputToHiddenWeights.show(slider.value);
   hiddenToOutputWeights.show(slider.value);
@@ -48,10 +55,5 @@ function draw(){
 }
 /*
 Found something interesting: Bias auto adjust to the screen size. Maybe I would like for everything else to auto adjust too
-+ Reorganized directories
-+ Include feed forward and backward propagation in records
-  - Even indexes are feed forward
-  - Uneven indexes are backward propagation
-+ Make the slider move automatically at a slow rate
-+ Change color of synapses according to type of record (feed forward or back propagation)
++ Made some finishing touches to make it presentable, still there's alot of work to be done (presentantion wise)
  */

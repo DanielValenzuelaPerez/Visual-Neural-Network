@@ -11,15 +11,16 @@ class Bias{
         // Text holder (box)
         fill(0);
         stroke(200);
+        strokeWeight(1.2);
         rectMode(CENTER);
         for(let i = 0; i < this.matrixRows; i++){
             this.y = (windowHeight / this.matrixRows) * i + ((windowHeight / this.matrixRows) * 0.5) + 30;
-            rect(this.x, this.y, 50, 20, 5);
+            rect(this.x, this.y-1, 40, 16, 4);
         }
 
         //Text
         fill(200);
-        textSize(16);
+        textSize(14);
         noStroke();
         textAlign(CENTER, CENTER);
         for(let i = 0; i < this.matrixRows; i++){

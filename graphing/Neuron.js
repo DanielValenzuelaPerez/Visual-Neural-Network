@@ -14,7 +14,7 @@ class Neuron{
     show(val){
         fill(0);
         stroke(255);
-        strokeWeight(2);
+        strokeWeight(1.5);
         ellipse(this.x, this.y, this.r);
         
         fill(255);
