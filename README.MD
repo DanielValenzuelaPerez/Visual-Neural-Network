@@ -1,38 +1,83 @@
-# Visualization of an Artificial Neural Network
-> Visual representantion of an artificial neural network as it learns, made with JavaScript.
+# Visual Representation of an Artificial Neural Network as it Learns
+> This project displays the neurons and connections of an Artificial Neural Network as it is being trained to learn the XOR table.
 
-## Overview of the project
-This project is an expansion of a school assignment I worked on my last semester at university (Tec MM Campus Zapopan) with profesor José Antonio Aviña Méndez.
-In this new version, I implement the algorithm in JavaScript and illustrate it using the P5.JS library. 
+Interact with [my project!](https://danielvalenzuelaperez.github.io/Visual-Neural-Network/ "GitHub Pages")
 
-### What is a neural network?
-A neural network comes from the field of study of the brain and how it learns. The brain has tons of neurons and these neurons have connections to other neurons. And these connections get fired up depending on the situation.
+## About
 
-One could say that the brain learns by trial and error. For instance, you present a three year old with a letter and ask him what letter it is. He guesses wrong, so you tell him what the correct letter was.
-You repeat this many times, with different letters and suddenly he starts to pick up on which letter each one is. 
-The try that with one to three-syllable words and the kid will start to guess right the pronunciation of these.
+This render of the Artificial Neural Network is being trained on the XOR table.
 
-### How does an artificial neural network works?
-An artificial neural network (ANN) has the following parts:
-- A minimum of three layers:
-    - Input
-    - Hidden
-    - Output
-- Weights between each layer
-- Bias for each 
+### XOR Table
 
-All layers have a number of neurons.
+| Input | Target Output |
+| ----- | ------------- |
+| 0 , 0 | 0 |
+| 0 , 1 | 1 |
+| 1 , 0 | 1 |
+| 1 , 1 | 0 |
 
-The input layer is the information that is being fed.
+The Artificial Neural Network is trained on the **Input** and **Target Output**.
 
-The hidden layer is the result of the input * the weight that connects to the next neuron + the bias, all these passed through an activation function.
+The project used the mathematical models behind the theory of real Neural Networks. On the front end, to draw the display I use the P5.JS library.
 
-And the output layer, is the same as the last layer. Except that in this instance, its hidden output * the weight that connects to the next neuron + the bias, all these passed through the same activation function.
-### Training
-#### Feed forward
-#### Check the error
-#### Back propagation
-## Usage
-*Pending...*
-## Licence
-*Pending...*
+[Image showing the project with the XOR table and some labels to represent input, target, output, timeline]
+
+The model has three layers:
+1. Input Layer
+    - Two neurons, each receives a value (0 or 1)
+1. Hidden Layer
+    - Four neurons, each is connected to the **Input Layer** neurons
+    - Each neuron uses the sigmoid activation function
+1. Output Layer
+    - One neuron, each is connected to the **Hidden Layer** neurons
+    - Same, sigmoid activation function
+* Weights
+    - Between each layer, each neuron is forwardly connected with the next layer's neurons
+    - The weight of each connection (synopsis), is represented as a line and a box above each line
+    - The stroke of the line changes as the weight grows
+    - The color of the line represents the status of the Artificial Neural Network:
+        - Green: **Feed Forward**
+        - Red: **Back Propagation**
+* Bias
+    - Represented as the box bellow each neuron in the **hidden** and **output** layer
+    - Importance of the [bias](https://stackoverflow.com/questions/2480650/what-is-the-role-of-the-bias-in-neural-networks "Stack OverFlow Post")
+
+### Back end
+
+[Image showing the flow chart made in LucidChart]
+
+One of the current challenges I face is that I’m having troubles to animate the flow of information from layer to layer, in both: the feed forward and back propagation of the Artificial Neural Network.
+
+## Credits
+
+* Artificial Intelligence Professor José Antonio Aviña Méndez at Instituto Tecnológico Superior de Zapopan.
+
+* Daniel Shiffman P5.JS tutorial from YouTube: [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw "YouTube Channel")
+
+* [Guide](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/ "Blog Post") on how to write a readme file.
+
+## License 
+MIT License
+
+---
+
+#### *(Jun 11, 2022)*
+
+### Motivation behind the project
+
+The project was certainly eye opening for me. The goal of the project was to learn a very basic thing: from one input, learn a specific output. When it succeeded, I tried to see if it worked with the XOR table – and it did!
+Then I tried with real data from some cancer records, and it worked as well! 
+
+### Why the project was built
+
+I wanted to visually see a representation of the artificial neural network as it learned, see the layers and the connections between each neuron, to update the synapse and its weights, and to see how the output is getting more accurate as it is being trained.
+What problem does it solve?
+This particular artificial neural network learns the XOR table. As I wanted it to be simple and I didn’t want to work with real data, as it is hard to understand. But it certainly would work!
+
+### What did I learn?
+
+I learned a lot with this project. It is certainly my first dive into Data Science and it was a very gratifying experience. Specially because it was developed with mathematical models with the help of a university professor (José Antonio Aviña Méndez). Seeing how it can be trained and learn by itself - It’s almost like magic!
+
+### What makes your project stand out?
+
+That it is a visual representation of an artificial neural network at work!
