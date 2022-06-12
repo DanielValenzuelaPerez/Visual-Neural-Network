@@ -20,7 +20,7 @@ The Artificial Neural Network is trained on the **Input** and **Target Output**.
 
 The project used the mathematical models behind the theory of real Neural Networks. On the front end, to draw the display I use the P5.JS library.
 
-[Image showing the project with the XOR table and some labels to represent input, target, output, timeline]
+![Untitled](https://user-images.githubusercontent.com/101780195/173217550-20b72e91-494a-4203-9ce5-d202d54c7d6d.gif)
 
 The model has three layers:
 1. Input Layer
@@ -44,7 +44,7 @@ The model has three layers:
 
 ### Back end
 
-[Image showing the flow chart made in LucidChart]
+![ANN Flow Diagram English](https://user-images.githubusercontent.com/101780195/173217721-341689c9-af55-40c3-8f87-a56237963d0d.png)
 
 One of the current challenges I face is that I’m having troubles to animate the flow of information from layer to layer, in both: the feed forward and back propagation of the Artificial Neural Network.
 
