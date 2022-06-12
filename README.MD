@@ -22,6 +22,8 @@ The project used the mathematical models behind the theory of real Neural Networ
 
 ![Untitled](https://user-images.githubusercontent.com/101780195/173217550-20b72e91-494a-4203-9ce5-d202d54c7d6d.gif)
 
+*One of the current challenges I face is that I’m having troubles to animate the flow of information from layer to layer, in both: the feed forward and back propagation of the Artificial Neural Network.*
+
 The model has three layers:
 1. Input Layer
     - Two neurons, each receives a value (0 or 1)
@@ -42,11 +44,9 @@ The model has three layers:
     - Represented as the box bellow each neuron in the **hidden** and **output** layer
     - Importance of the [bias](https://stackoverflow.com/questions/2480650/what-is-the-role-of-the-bias-in-neural-networks "Stack OverFlow Post")
 
-### Back end
+### Flow Chart
 
 ![ANN Flow Diagram English](https://user-images.githubusercontent.com/101780195/173217721-341689c9-af55-40c3-8f87-a56237963d0d.png)
-
-One of the current challenges I face is that I’m having troubles to animate the flow of information from layer to layer, in both: the feed forward and back propagation of the Artificial Neural Network.
 
 ## Credits
 
