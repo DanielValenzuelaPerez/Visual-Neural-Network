@@ -28,11 +28,11 @@ The model has three layers:
 1. Input Layer
     - Two neurons, each receives a value (0 or 1)
 1. Hidden Layer
-    - Four neurons, each is connected to the **Input Layer** neurons
+    - Four neurons, each one is connected to every **Input Layer's** neurons
     - Each neuron uses the sigmoid activation function
 1. Output Layer
-    - One neuron, each is connected to the **Hidden Layer** neurons
-    - Same, sigmoid activation function
+    - One neuron which is connected to each **Hidden Layer's** neurons
+    - It uses the sigmoid activation function as well
 * Weights
     - Between each layer, each neuron is forwardly connected with the next layer's neurons
     - The weight of each connection (synopsis), is represented as a line and a box above each line
@@ -61,7 +61,7 @@ MIT License
 
 ---
 
-#### *(Jun 11, 2022)*
+#### *(June 11, 2022)*
 
 ### Motivation behind the project
 
